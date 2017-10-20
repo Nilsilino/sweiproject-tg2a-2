@@ -16,7 +16,6 @@ public class Konto {
 	}
 	
 	public void einzahlen(GeldBetrag eingezahlterBetrag) {
-		betrag = new GeldBetrag(betrag.getBetrag() + eingezahlterBetrag.getBetrag());
 	}
 
 }
