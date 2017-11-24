@@ -10,23 +10,19 @@ public class CreateActivity {
 	String department;
 	List<String> tags;
 	String description;
-	List<String> pictureLinks;
-	
 	
 	CreateActivity(int idCounter, 
 			int id, 
 			String name, 
 			String department, 
 			List<String> tags, 
-			String description,
-			List<String> pictureLinks) {
+			String description) {
 		this.idCounter = idCounter;
 		this.id = id;
 		this.name = name;
 		this.department = department;
 		this.tags = tags;
 		this.description = description;
-		this.pictureLinks = pictureLinks;
 	}
 	
 	public int getId() {
@@ -71,18 +67,6 @@ public class CreateActivity {
 	
 	String getDescription() {
 		return description;
-	}
-	
-		void addPictureLink(String link) {
-		pictureLinks.add(link);
-	}
-	
-	void removePictureLinks(String link) {
-		for(int i = 0; i < pictureLinks.size(); i++) {
-			if(pictureLinks.get(i) == link) {
-				pictureLinks.remove(i);
-			}
-		}
 	}
 	
 }
