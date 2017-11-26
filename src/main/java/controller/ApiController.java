@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,9 @@ import model.*;
 
 @RestController
 public class ApiController {
+	
+    private static final String template = "Hello, %s!";
+    private final AtomicLong counter = new AtomicLong();
 	
     @RequestMapping("/list")
     public List<Activity> list() {	
@@ -23,9 +27,9 @@ public class ApiController {
     }
     
     @RequestMapping("/greeting")
-    public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+    public Greeting greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        return "greeting";
+        return new Greeting(counter.incrementAndGet(),String.format(template, name));
     }
 
 }
