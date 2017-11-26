@@ -1,7 +1,6 @@
-/**
- * 
- */
-package hello;
+/*
+
+package Mail;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
@@ -14,11 +13,13 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+*/
 
 /**
  * @author hm-nwimmer
  *
  */
+/*
 public class EMail {
 
 	private static final String SUBJECT = "Your personal link to Create/Change ur activity";
@@ -32,9 +33,7 @@ public class EMail {
 	Session session;
 	MimeMessage message;
 	Transport transport;
-	/**
-	 * 
-	 */
+
 	public EMail(String to) {
 		// TODO Auto-generated constructor stub
 		this.to = to;
@@ -93,3 +92,5 @@ public class EMail {
 		return result;	
 	}
  }
+
+*/

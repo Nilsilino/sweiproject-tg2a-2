@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+<script>
+    $.getJSON('/list',
+        function(data) {
+			data.forEach(function(activity) {
+					
+					var s = "<tr>"+"<td>"+activity.name+"</td><td>"+activity.department+"</td><td>";
+					activity.tags.forEach(function(tag) {
+						s += tag + " ";
+
+					});
+					var a = document.createElement('a');
+					var linkText = document.createTextNode("details");
+					a.appendChild(linkText);
+					a.title = "details";
+					a.href = "/details?="+activity.id;
+					//document.body.appendChild(a);
+					$('#startcolumn').append(s+"</td><td>"+activity.description+"</td><td>"+a+"</td></tr>");
+			});
+    });
+
+            
+</script>
+
+</head>
+
+<body>
+
+<h2><span style="color: #993366;">Overview of Activities</span></h2>
+<div>
+	<table border="1" bordercolor = "black" cellpadding = "3" cellspacing = "1">
+		<tr >
+			<td><h4>Name</h4></td>
+			<td><h4>Department</h4></td>
+			<td><h4>Tags</h4></td>
+			<td><h4>Description</h4></td>
+			<td><h4>Details</h4></td>
+		</tr>
+		<tbody id="startcolumn">
+		</tbody>
+	</table>
+</div>
+
+
+
+</body>
+</html>
