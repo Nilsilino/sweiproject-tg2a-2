@@ -35,4 +35,12 @@ public class DataBase {
 		activities.add(a);
 	}
 	
+	public static void deleteActivity(int id) {
+		for(int i = 0; i < activities.size(); i++)  {
+			if(activities.get(i).getId() == id) {
+				activities.remove(i);
+			}
+		}
+	}
+	
 }
