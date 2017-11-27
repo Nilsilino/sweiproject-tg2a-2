@@ -36,6 +36,10 @@ function goBack() {
 }
 
 function sendMail() {
+	$.getJSON('/MailTo?mail='+ mail.value,
+			function(data) {
+			});
+	
 	document.getElementById('thanks').style.display='block'
 }
     

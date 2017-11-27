@@ -26,6 +26,12 @@ public class ApiController {
         return DataBase.getActivity(requested_id);
     }
     
+    @RequestMapping("/MailTo")
+    public String sendMail(@RequestParam(value="mail", required=true) String mail, Model model) {
+    	System.out.println("sending Email to "+ mail);
+    	return "{ \"status\" : \"ok\"}";
+    }
+    
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
