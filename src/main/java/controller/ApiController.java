@@ -22,7 +22,7 @@ public class ApiController {
     }
     
     @RequestMapping("/details")
-    public Activity details(@RequestParam(value="id", required=true) int requested_id, Model model) {  	
+    public Activity details(@RequestParam(value="id", required=true) int requested_id, Model model) {  
         return DataBase.getActivity(requested_id);
     }
     

@@ -3,28 +3,7 @@
 <head>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
-<script>
-    $.getJSON('/list',
-        function(data) {
-			data.forEach(function(activity) {
-					
-					var s = "<tr>"+"<td>"+activity.name+"</td><td>"+activity.department+"</td><td>";
-					activity.tags.forEach(function(tag) {
-						s += tag + " ";
-
-					});
-					var a = document.createElement('a');
-					var linkText = document.createTextNode("details");
-					a.appendChild(linkText);
-					a.title = "details";
-					a.href = "/details?="+activity.id;
-					//document.body.appendChild(a);
-					$('#startcolumn').append(s+"</td><td>"+activity.description+"</td><td>"+a+"</td></tr>");
-			});
-    });
-
-            
-</script>
+    <script type="text/javascript" src="../js/loadList.js" />
 
 </head>
 

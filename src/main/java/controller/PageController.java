@@ -15,5 +15,10 @@ public class PageController {
     public String view(Model model) {
 		return "view";
     }
+    
+    @RequestMapping("/activity")
+    public String seeActivity(@RequestParam(value="id", required=true) int id, Model model) {
+		return "details";
+    }
 
 }

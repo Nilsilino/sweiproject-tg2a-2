@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+    <script type="text/javascript" src="../js/loadActivity.js" />
+
 </head>
 
 <body>
 
 <h2><span style="color: #993366;">Details</span></h2>
-not yet implemented
 
+<h4>Name </h4>
+<div>
+<p id="namensfeld"> </p>
+</div>
+<h4>Department </h4>
+<div>
+<p id="departmentfeld"> </p>
+</div>
+<h4>Tags </h4>
+<div>
+<p id="tagfeld"> </p>
+</div>
 
-
+<h4>Description </h4>
+<div>
+<p id="descriptionfeld"> </p>
+</div>
+<div>
+<button onclick="goBack()">Go Back</button>
+<button type="button" onclick="document.getElementById('verification').style.display='block'">Edit</button>
+</div>
+<div id="verification">
+<p>Please verify your self! A link will be sent to your Email.</p>
+<textarea rows="1" cols="40" id="mail"></textarea><button type="button" onclick="sendMail()">Submit</button>
+<p id="thanks">thanks</p>
+</div>
 </body>
+</html>
