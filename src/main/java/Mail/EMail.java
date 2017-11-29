@@ -56,7 +56,7 @@ public class EMail {
                     @Override
                     protected PasswordAuthentication getPasswordAuthentication() {
                         System.out.println("Authenticating");
-                        return new PasswordAuthentication(FROM, TO);
+                        return new PasswordAuthentication(System.getenv("EMAIL_ADDRESS"), System.getenv("EMAIL_PASSWORD"));
                     }
 
                 });
@@ -74,23 +74,7 @@ public class EMail {
         return "Sent Message succesfully";
 	}
 
-	public byte[] asciiConverter(String message) {
-		try {
-			array = message.getBytes("US-ASCII");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return array;
-	}
-	
-	public String asciiString (byte[] array) {
-		String result = "";
-		for (byte b : array) {
-			result += Byte.toString(b);
-		}
-		return result;	
-	}
+
  }
 
 */
