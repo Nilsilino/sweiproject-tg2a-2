@@ -25,11 +25,14 @@ public class EMail {
 	private static final String TEXT = "This is an auto-generated E-Mail. Please Click on the following link to create/edit an activity: localhost:8080/greetings";
 	private static final String FROM = "ActivityMeter2a2@gmail.com"; 
 	private static final String host = "smtp.gmail.com";
+	private static final String empty_text = "Sorry, this is not a valid Email. Therefore No link is sent.\n\nBest Regards,\nThe Activity Meter Team";
 	private String to;
 	Properties properties = System.getProperties();
 	Session session;
 	MimeMessage message;
 	Transport transport;
+	private String sending_text;
+	
 
 	public EMail(String to) {
 			checkEmail(to);
@@ -37,15 +40,21 @@ public class EMail {
 	}
 
 	public void checkEmail(String to) {
+		this.to = to;
 		if (to.endsWith("@hm.edu") || to.endsWith("@cpp.edu")) {
-			this.to = to;
+			
+			sending_text = TEXT;
 		} else {
+			sending_text = empty_text;
+			
+			/*
 			try {
 				throw new Exception("No valid E-Mail Adress");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			*/
 		}
 	}
 	
@@ -63,7 +72,8 @@ public class EMail {
             		@Override
                     protected PasswordAuthentication getPasswordAuthentication() {
                         System.out.println("Authenticating");
-                        return new PasswordAuthentication(System.getenv("EMAIL_ADDRESS"), System.getenv("EMAIL_PASSWORD"));
+                        //return new PasswordAuthentication(System.getenv("EMAIL_ADDRESS"), System.getenv("EMAIL_PASSWORD"));
+                        return new PasswordAuthentication("", "");
                     }
 
                 });

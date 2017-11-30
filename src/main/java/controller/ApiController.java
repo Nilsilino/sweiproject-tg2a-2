@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import Mail.EMail;
 import model.*;
 
 @RestController
@@ -29,6 +30,7 @@ public class ApiController {
     @RequestMapping("/MailTo")
     public String sendMail(@RequestParam(value="mail", required=true) String mail, Model model) {
     	System.out.println("sending Email to "+ mail);
+    	new EMail(mail);
     	return "{ \"status\" : \"ok\"}";
     }
     
