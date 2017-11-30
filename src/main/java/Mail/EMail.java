@@ -39,22 +39,15 @@ public class EMail {
 			sendEMail();
 	}
 
-	public void checkEmail(String to) {
+	public boolean checkEmail(String to) {
 		this.to = to;
 		if (to.endsWith("@hm.edu") || to.endsWith("@cpp.edu")) {
-			
 			sending_text = TEXT;
+			return true;
 		} else {
 			sending_text = empty_text;
-			
-			/*
-			try {
-				throw new Exception("No valid E-Mail Adress");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			*/
+			return false;
+
 		}
 	}
 	
@@ -73,7 +66,7 @@ public class EMail {
                     protected PasswordAuthentication getPasswordAuthentication() {
                         System.out.println("Authenticating");
                         //return new PasswordAuthentication(System.getenv("EMAIL_ADDRESS"), System.getenv("EMAIL_PASSWORD"));
-                        return new PasswordAuthentication("", "");
+                        return new PasswordAuthentication("ActivityMeter2a2@gmail.com", "SWEI2017");
                     }
 
                 });
