@@ -8,15 +8,18 @@ public class Activity {
 	private static int idCounter = 0;
 	private int id;
 	private String name;
+	private String category;
 	private String department;
 	private List<String> tags;
 	private String description;
 	
-	public Activity(String name, 
+	public Activity(String name,
+			String category,
 			String department,  
 			String description, List<String> tags) {
 		this.id = idCounter++;
 		this.name = name;
+		this.category = category;
 		this.department = department;
 		this.tags = new ArrayList<String>();
 		this.description = description;
@@ -26,6 +29,14 @@ public class Activity {
 		}
 	}
 	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	public int getId() {
 		return id;
 	}

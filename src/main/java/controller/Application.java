@@ -22,9 +22,9 @@ public class Application {
     	t2.add("unnötig");
     	t3.add("NoLife");
     	
-    	DataBase.addActivity(new Activity("Activity 1", "Informatik", "Diese Activity muss man gemacht haben", t1));
-    	DataBase.addActivity(new Activity("Activity 2", "BWL", "Diese Activity hat keinen Wert", t2));
-    	DataBase.addActivity(new Activity("Activity 3", "Maschinenbau", "Diese Activity ist für komische Menschen", t3));
+    	DataBase.addActivity(new Activity("Activity 1","Cat1", "Informatik", "Diese Activity muss man gemacht haben", t1));
+    	DataBase.addActivity(new Activity("Activity 2","Cat2", "BWL", "Diese Activity hat keinen Wert", t2));
+    	DataBase.addActivity(new Activity("Activity 3","Cat3", "Maschinenbau", "Diese Activity ist für komische Menschen", t3));
     	
         SpringApplication.run(Application.class, args);
     }
