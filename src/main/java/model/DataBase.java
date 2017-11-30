@@ -68,4 +68,12 @@ public class DataBase {
 		m.remove(key);
 	}
 	
+	public static int getLength() {
+		int i = 0;
+		for (Activity a : activities) {
+			i++;
+		}
+		return i;
+	}
+	
 }
