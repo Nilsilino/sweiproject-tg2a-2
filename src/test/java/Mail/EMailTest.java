@@ -18,7 +18,7 @@ public class EMailTest {
 	@Test 
 	public void testCheckEmail() {
 		EMail mail = new EMail("ActivityMeter2a2@gmail.com", 12345);
-		assertFalse(mail.checkEmail("ActivityMeter2a2@gmail.com"));
+		assertFalse(mail.checkEmail("ActivityMeter2a2@gmail.com", 12345));
 	}
 	
 	/*@Test(expected = SendFailedException.class) 
