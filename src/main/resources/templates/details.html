@@ -24,12 +24,48 @@
     box-sizing: border-box;
     resize: none;
     }
+    
+.btn {
+  background: #d11fc2;
+  background-image: -webkit-linear-gradient(top, #d11fc2, #2b7fb8);
+  background-image: -moz-linear-gradient(top, #d11fc2, #2b7fb8);
+  background-image: -ms-linear-gradient(top, #d11fc2, #2b7fb8);
+  background-image: -o-linear-gradient(top, #d11fc2, #2b7fb8);
+  background-image: linear-gradient(to bottom, #d11fc2, #2b7fb8);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 6px 10px 6px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
 </style>
 </head>
 
 <body>
 <div class="center">
 	<h1><span style="color: #993366;">Details</span></h1>
+		<div>
+		<button class="btn" onclick="goBack()">Go Back</button>
+		<button class="btn" type="button" onclick="document.getElementById('verification').style.display='block'">Edit</button>
+	</div>
+	<div id="verification">
+		<p>Please verify your self! A link will be sent to your Email.</p>
+		<textarea rows="1" cols="40" id="mail"></textarea><button type="button" onclick="sendMail()">Submit</button>
+		<p id="thanks">thanks</p>
+	</div>
 	
 	<h3>Name </h3>
 	<div>
@@ -52,15 +88,7 @@
 	<div>
 		<p id="descriptionfeld"> </p>
 	</div>
-	<div>
-		<button onclick="goBack()">Go Back</button>
-		<button type="button" onclick="document.getElementById('verification').style.display='block'">Edit</button>
-	</div>
-	<div id="verification">
-		<p>Please verify your self! A link will be sent to your Email.</p>
-		<textarea rows="1" cols="40" id="mail"></textarea><button type="button" onclick="sendMail()">Submit</button>
-		<p id="thanks">thanks</p>
-	</div>
+
 </div>
 </body>
 </html>

@@ -33,13 +33,38 @@
     background-color: #4CAF50;
     color: white;
 }
+.btn {
+  background: #d11fc2;
+  background-image: -webkit-linear-gradient(top, #d11fc2, #2b7fb8);
+  background-image: -moz-linear-gradient(top, #d11fc2, #2b7fb8);
+  background-image: -ms-linear-gradient(top, #d11fc2, #2b7fb8);
+  background-image: -o-linear-gradient(top, #d11fc2, #2b7fb8);
+  background-image: linear-gradient(to bottom, #d11fc2, #2b7fb8);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 6px 10px 6px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  
 </style>
 </head>
 
 <body>
 <div class="center">
 	<h1><span style="color: #993366;">Overview of Activities</span></h1>
-	<button onclick="window.location.href='/createActivity'">Create a new Activity</button>
+	<button class="btn" onclick="window.location.href='/createActivity'">Create a new Activity</button>
 	<p></p>
 	
 	<div>
