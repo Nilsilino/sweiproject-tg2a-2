@@ -22,10 +22,10 @@ import javax.mail.internet.MimeMessage;
 public class EMail {
 
 	private static final String SUBJECT = "Your personal link to Create/Change ur activity";
-	private static final String TEXT = "This is an auto-generated E-Mail. Please Click on the following link to create/edit an activity: localhost:8080/greetings";
+	private static final String TEXT = "Dear User,\n\nHere is your verification code: THISCODE \n\nBest Regards,\nThe Activity Meter Team";
 	private static final String FROM = "ActivityMeter2a2@gmail.com"; 
 	private static final String host = "smtp.gmail.com";
-	private static final String empty_text = "Sorry, this is not a valid Email. Therefore No link is sent.\n\nBest Regards,\nThe Activity Meter Team";
+	private static final String empty_text = "Dear User,\n\nSorry, this is not a valid Email. Therefore No link is sent.\n\nBest Regards,\nThe Activity Meter Team";
 	private String to;
 	Properties properties = System.getProperties();
 	Session session;
@@ -34,15 +34,15 @@ public class EMail {
 	private String sending_text;
 	
 
-	public EMail(String to) {
-			checkEmail(to);
+	public EMail(String to, int key) {
+			checkEmail(to,key);
 			sendEMail();
 	}
 
-	public boolean checkEmail(String to) {
+	public boolean checkEmail(String to,int key) {
 		this.to = to;
 		if (to.endsWith("@hm.edu") || to.endsWith("@cpp.edu")) {
-			sending_text = TEXT;
+			sending_text = TEXT.replaceAll("THISCODE", Integer.toString(key));
 			return true;
 		} else {
 			sending_text = empty_text;
@@ -74,7 +74,7 @@ public class EMail {
 			message.setFrom(new InternetAddress(FROM));
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 			message.setSubject(SUBJECT);
-			message.setText(TEXT);
+			message.setText(sending_text);
             transport = session.getTransport("smtp");
             Transport.send(message);
 		} catch (MessagingException e) {

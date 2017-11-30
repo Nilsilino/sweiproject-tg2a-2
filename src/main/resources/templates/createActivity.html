@@ -4,53 +4,111 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
     <script type="text/javascript" src="../js/loadCreate.js" />
+<style>
+.center {
+    margin: 0;
+    padding: 0;
+    text-align: center; /* !!! */
+	}
+.textfield {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;	
+	width: 35%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+    }
 
+.btn {
+  background: #002bd6;
+  background-image: -webkit-linear-gradient(top, #002bd6, #6a98f5);
+  background-image: -moz-linear-gradient(top, #002bd6, #6a98f5);
+  background-image: -ms-linear-gradient(top, #002bd6, #6a98f5);
+  background-image: -o-linear-gradient(top, #002bd6, #6a98f5);
+  background-image: linear-gradient(to bottom, #002bd6, #6a98f5);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 6px 10px 6px 10px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+</style>
 </head>
 <body>
+<div class="center">
+	<h1><span style="color: #993366;">New Activity</span></h1>
+	<div>
+	<button class="btn" onclick="cancel()">Go Back</button>
+	</div>
+	
+	<div>
+	<h3>Name</h3>
+	<textarea class="textfield" rows="1" cols="20" id="namensfeld"></textarea>
+	</div>
+	
+	<div>
+	<h3>Category</h3>
+	<textarea class="textfield" rows="2" cols="30" id="categoryfeld"></textarea>
+	</div>
+	
+	<div>
+	<h3>Department</h3>
+	<textarea class="textfield" rows="1" cols="20" id="departmentfeld" value=""></textarea>
+	</div>
+	
+	<h3>Tags</h3>
+	<div>
+	<textarea class="textfield" rows="5" cols="20" id="tagfeld" value=""></textarea>
+	</div>
+	
+	<h3>Description</h3>
+	<div>
+	<textarea class="textfield" rows="10" cols="80" id="descriptionfeld" ></textarea>
+	</div>
+	
+	<div>
+	<p>Please verify yourself! A code will be sent to your Email.</p>
+	</div>
+	
+	<div>
+	<textarea class="textfield" rows="1" cols="20" id="mail"></textarea>
+	<button class="btn" onclick="doBoth()">Send Email</button>
+	</div>
+	
+	<div id="verificationpart">
+		<p>Please enter the code which was sent to the Email you submitted.</p>
+		<textarea  rows="1" cols="20" id="emailfield"></textarea>
+		<button class="btn" onclick="verify()">Submit</button>
+		<p id="thanks">Failure</p>
+	</div>
+	
+	<script>
 
-<h2>Create a new Activity</h2>
-<div>
-<button onclick="cancel()">Cancel</button>
+    	document.getElementById("verificationpart").style.display = "none";
+		document.getElementById("thanks").style.display= "none";
+
+</script>
+	
 </div>
-
-<div>
-<h4>Name</h4>
-<textarea rows="1" cols="20" id="namensfeld" value=""></textarea>
-</div>
-
-<div>
-<h4>Category</h4>
-<textarea rows="2" cols="30" id="categoryfeld" value=""></textarea>
-</div>
-
-<div>
-<h4>Department</h4>
-<textarea rows="1" cols="20" id="departmentfeld" value=""></textarea>
-</div>
-
-<h4>Tags</h4>
-<div>
-<textarea rows="5" cols="20" id="tagfeld" value=""></textarea>
-</div>
-
-<h4>Description</h4>
-<div>
-<textarea rows="10" cols="80" id="descriptionfeld" ></textarea>
-</div>
-
-<div>
-<p>Please verify yourself! A code will be sent to your Email.</p>
-</div>
-
-<div>
-<textarea rows="1" cols="40" id="mail"></textarea><button onclick="doBoth()">Send Email</button>
-</div>
-
-<div id="code">
-<p>Please enter the code which was sent to the Email you submitted.</p>
-<input type="text" id="code2" value=""></input><button onclick="sendMail()">Submit code</button>
-<p id="code2">thanks</p>
-</div>
-
 </body>
 </html>
