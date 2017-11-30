@@ -1,9 +1,12 @@
 $.getJSON('/details?id='+getParameterByName('id'),
 function(data) {
-	$('#namensfeld').append("<textarea rows=\"1\" cols=\"50\">"+data.name+"</textarea>");
-	$('#departmentfeld').append("<textarea rows=\"1\" cols=\"50\">"+data.department+"</textarea>");
 	
-	var s = "<textarea rows=\"2\" cols=\"50\">";
+	if(data != null) {
+	$('#namensfeld').append("<textarea class=\"textfield\" rows=\"1\" cols=\"50\" disabled>"+data.name+"</textarea>");
+	$('#categoryfeld').append("<textarea class=\"textfield\" rows=\"1\" cols=\"50\" disabled>"+data.category+"</textarea>");
+	$('#departmentfeld').append("<textarea class=\"textfield\" rows=\"1\" cols=\"50\" disabled>"+data.department+"</textarea>");
+	
+	var s = "<textarea class=\"textfield\" rows=\"2\" cols=\"50\" disabled>";
 	
 	for(var i=0;i<data.tags.length;i++) {
 		if(i == (data.tags.length-1)) {
@@ -15,10 +18,10 @@ function(data) {
 	}
 	
 	$('#tagfeld').append(s+"</textarea>");
-	$('#descriptionfeld').append("<textarea rows=\"4\" cols=\"50\">"+data.description+"</textarea>");
-	
-	document.getElementById('verification').style.display='none'
-	document.getElementById('thanks').style.display='none'    
+	$('#descriptionfeld').append("<textarea class=\"textfield\" rows=\"4\" cols=\"50\" disabled>"+data.description+"</textarea>");
+	}
+	document.getElementById('verification').style.display='none';
+	document.getElementById('thanks').style.display='none';
 	
 });
     
