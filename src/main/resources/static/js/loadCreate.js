@@ -1,7 +1,7 @@
 $.getJSON('/createActivity',
 function(data) {
-	document.getElementById('code').style.visibility="hidden"
-	document.getElementById('code2').style.visibility="hidden"    
+	document.getElementById('code').style.display="none"
+	document.getElementById('code2').style.display="none"    
 });
 function cancel() {
     window.history.back();
