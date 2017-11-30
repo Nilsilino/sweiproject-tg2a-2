@@ -3,11 +3,14 @@
 <head>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
-    <script type="text/javascript" src="../js/loadActivity.js" />
+    <script type="text/javascript" src="../js/loadCreate.js" />
 </head>
 <body>
 
-<h2>Create a new Activity</h2>
+<h2>Create a new Activity
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="Cancel()">Cancel</button>
+</h2>
 
 <div>
 <h4>Name</h4>
@@ -32,9 +35,12 @@
 <div>
 <p>Please verify yourself! A link will be sent to your Email.</p>
 <input type="text" id="Email" value=""></input>
-<button type="button" onlcick="document.getElementById('Email').style.display='block'">Send Email</button>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button onclick="goBack()">Cancel</button>
+<p></p>
+<button type="button" onclick="document.getElementById('code').style.display='block';sendMail()">Send Email</button>
+</div>
+<div id="code">
+<p>Please enter the code which was sent to the Email you submitted.</p>
+<input type="text" id="code2" value=""></input>
 </div>
 </body>
 </html>
