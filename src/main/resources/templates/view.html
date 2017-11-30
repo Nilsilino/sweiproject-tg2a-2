@@ -10,6 +10,29 @@
     padding: 0;
     text-align: center; /* !!! */
 }
+
+#activitytable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+}
+
+#activitytable td, #activitytable th {
+    border: 2px solid #ddd;
+    padding: 8px;
+}
+
+#activitytable tr:nth-child(even){background-color: #f2f2f2;}
+
+#activitytable tr:hover {background-color: #ddd;}
+
+#activitytable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
 </style>
 </head>
 
@@ -20,12 +43,12 @@
 	<p></p>
 	
 	<div>
-		<table align="center" border="1" bordercolor = "black" cellpadding = "3" cellspacing = "1">
+		<table id="activitytable" align="center" >
 			<tr >
-				<td width="200"><h4>Name</h4></td>
-				<td width="200"><h4>Category</h4></td>
-				<td width="200"><h4>Department</h4></td>
-				<td width="300"><h4>Tags</h4></td>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Department</th>
+				<th>Tags</th>
 			</tr>
 			<tbody id="startcolumn">
 			</tbody>
