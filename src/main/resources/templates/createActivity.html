@@ -4,13 +4,20 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
     <script type="text/javascript" src="../js/loadCreate.js" />
+//    <script type="text/javascricpt">
+//    function hideShow() {
+//    if(document.getElementById('
+//    	document.getElementById('code').style.display='none';
+//		document.getElementById('code2').style.display='none';
+//	}
+//	</script>
 </head>
 <body>
 
-<h2>Create a new Activity
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button onclick="Cancel()">Cancel</button>
-</h2>
+<h2>Create a new Activity</h2>
+<div>
+<button onclick="cancel()">Cancel</button>
+</div>
 
 <div>
 <h4>Name</h4>
@@ -22,8 +29,8 @@
 <textarea rows="2" cols="30" id="categoryfeld" value=""></textarea>
 </div>
 
-<h4>Department</h4>
 <div>
+<h4>Department</h4>
 <textarea rows="1" cols="20" id="departmentfeld" value=""></textarea>
 </div>
 
@@ -38,14 +45,18 @@
 </div>
 
 <div>
-<p>Please verify yourself! A link will be sent to your Email.</p>
-<input type="text" id="Email" value=""></input>
-<p></p>
-<button type="button" onclick="document.getElementById('code').style.display='block';sendMail()">Send Email</button>
+<p>Please verify yourself! A code will be sent to your Email.</p>
 </div>
+
+<div>
+<textarea rows="1" cols="40" id="mail"></textarea><button onclick="doBoth()">Send Email</button>
+</div>
+
 <div id="code">
 <p>Please enter the code which was sent to the Email you submitted.</p>
-<input type="text" id="code2" value=""></input>
+<input type="text" id="code2" value=""></input><button onclick="sendMail()">Submit code</button>
+<p id="code2">thanks</p>
 </div>
+
 </body>
 </html>
