@@ -20,5 +20,10 @@ public class PageController {
     public String seeActivity(@RequestParam(value="id", required=true) int id, Model model) {
 		return "details";
     }
-
+    
+    @RequestMapping("/createActivity")
+    public String create(@RequestParam(defaultValue="", required=false)String text, Model model) {
+		return "createActivity";
+    	
+    }
 }

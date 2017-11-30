@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+    <script type="text/javascript" src="../js/loadActivity.js" />
+</head>
+<body>
+
+<h2>Create a new Activity</h2>
+
+<div>
+<h4>Name</h4>
+<textarea rows="1" cols="20" id="namensfeld" value=""></textarea>
+</div>
+
+<h4>Department</h4>
+<div>
+<textarea rows="1" cols="20" id="departmendfeld" value=""></textarea>
+</div>
+
+<h4>Tags</h4>
+<div>
+<textarea rows="5" cols="20" id="tagfeld" value=""></textarea>
+</div>
+
+<h4>Description</h4>
+<div>
+<textarea rows="10" cols="80" id="descriptionfeld" ></textarea>
+</div>
+
+<div>
+<p>Please verify yourself! A link will be sent to your Email.</p>
+<input type="text" id="Email" value=""></input>
+<button type="button" onlcick="document.getElementById('Email').style.display='block'">Send Email</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="goBack()">Cancel</button>
+</div>
+</body>
+</html>

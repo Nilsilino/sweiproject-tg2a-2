@@ -14,5 +14,7 @@
 					}
 					$('#startcolumn').append(s+"</td><td>"+activity.description+"</td><td>"+"<a href=\"/activity?id="+activity.id+"\">details</a>"+"</td></tr>");
 			});
+			
     });
+    
     

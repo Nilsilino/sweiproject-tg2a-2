@@ -18,7 +18,8 @@ function(data) {
 	$('#descriptionfeld').append("<textarea rows=\"4\" cols=\"50\">"+data.description+"</textarea>");
 	
 	document.getElementById('verification').style.display='none'
-	document.getElementById('thanks').style.display='none'
+	document.getElementById('thanks').style.display='none'    
+	
 });
     
 function getParameterByName(name, url) {
@@ -42,4 +43,3 @@ function sendMail() {
 	
 	document.getElementById('thanks').style.display='block'
 }
-    
