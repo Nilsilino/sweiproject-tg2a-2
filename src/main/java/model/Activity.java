@@ -74,7 +74,7 @@ public class Activity {
 	}
 	
 	public void clearTags() {
-		tags.removeAll(tags);
+		tags.clear();
 	}
 	
 	public void setDescription(String description) {
