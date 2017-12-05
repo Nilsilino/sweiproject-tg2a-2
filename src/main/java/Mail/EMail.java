@@ -61,12 +61,15 @@ public class EMail {
             properties.put("mail.smtp.auth", "true");
             properties.put("mail.smtp.port", "465");
             properties.put("mail.smtp.ssl.enable", "true");
-            session = Session.getInstance(properties, new javax.mail.Authenticator(){
+            System.out.println(System.getenv("EMAIL_ADDRESS"));
+            System.out.println(System.getenv("EMAIL_PASSWORD"));
+            PasswordAuthentication passwordauthentication = new PasswordAuthentication(System.getenv("EMAIL_ADDRESS"), System.getenv("EMAIL_PASSWORD"));
+            session = Session.getDefaultInstance(properties, new javax.mail.Authenticator(){
             		@Override
                     protected PasswordAuthentication getPasswordAuthentication() {
                         System.out.println("Authenticating");
-                        //return new PasswordAuthentication(System.getenv("EMAIL_ADDRESS"), System.getenv("EMAIL_PASSWORD"));
-                        return new PasswordAuthentication("ActivityMeter2a2@gmail.com", "SWEI2017");
+                        return passwordauthentication;
+                        //return new PasswordAuthentication("ActivityMeter2a2@gmail.com", "SWEI2017");
                     }
 
                 });
