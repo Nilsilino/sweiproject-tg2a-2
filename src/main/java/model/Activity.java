@@ -12,18 +12,21 @@ public class Activity {
 	private String department;
 	private List<String> tags;
 	private String description;
+	private String email;
 	
 	public Activity(String name,
 			String category,
 			String department,  
-			String description, List<String> tags) {
+			String description,
+			String email,
+			List<String> tags) {
 		this.id = idCounter++;
 		this.name = name;
 		this.category = category;
 		this.department = department;
 		this.tags = new ArrayList<String>();
 		this.description = description;
-		
+		this.email = email;
 		for(String s : tags) {
 			this.tags.add(s);
 		}
@@ -83,6 +86,10 @@ public class Activity {
 	
 	public String getDescription() {
 		return description;
+	}
+	
+	public String getEmail() {
+		return email;
 	}
 	
 }
